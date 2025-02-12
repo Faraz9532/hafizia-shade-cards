@@ -1,152 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hafizia Shade Cards Index</title>
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      background-color: #f9f9f9;
-      text-align: center;
-      padding: 20px;
-    }
-    h1 {
-      color: #333;
-    }
-    .image-links {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-      margin-top: 20px;
-    }
-    .image-links a {
-      text-decoration: none;
-      color: #007bff;
-      font-size: 1.1rem;
-      transition: color 0.2s;
-    }
-    .image-links a:hover {
-      color: #0056b3;
-    }
-    .preview {
-      margin-top: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .preview img {
-      max-width: 300px;
-      height: auto;
-      border: 2px solid #ddd;
-      border-radius: 8px;
-      display: none; /* Initially hidden */
-    }
-    .download-btn {
-      visibility: hidden; /* Keeps button space reserved */
-      margin-top: 10px;
-      padding: 10px 15px;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    .download-btn:hover {
-      background-color: #0056b3;
-    }
-    .loading-message {
-      display: none;
-      margin-top: 10px;
-      color: #333;
-      font-style: italic;
-    }
-    .spinner {
-      display: none;
-      margin-top: 10px;
-      width: 30px;
-      height: 30px;
-      border: 4px solid rgba(0, 0, 0, 0.1);
-      border-top: 4px solid #007bff;
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-    }
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hafizia Shade Card Index</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: row;
+            height: 100vh;
+        }
+        
+        /* Left column for the links */
+        .index {
+            width: 250px;
+            background-color: #f4f4f4;
+            padding: 20px;
+            height: 100%;
+            overflow-y: auto;
+        }
+        
+        .index a {
+            display: block;
+            margin: 10px 0;
+            padding: 8px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .index a:hover {
+            background-color: #0056b3;
+        }
+
+        /* Heading style */
+        h1 {
+            text-align: center;
+            font-size: 24px;
+            margin-top: 20px;
+            color: #333;
+        }
+
+        /* Right column for image preview */
+        .image-container {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #eaeaea;
+            height: 100%;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            max-height: 100%;
+            display: none;
+        }
+
+        /* Download button style */
+        .download-link {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            padding: 5px 10px;
+            font-size: 12px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .download-link:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
 
-  <h1>Hafizia Shade Cards Index</h1>
+    <!-- Left side for links -->
+    <div class="index">
+        <h1>Hafizia Shade Card Index</h1>
+        <a href="#" data-image="https://dl.dropboxusercontent.com/scl/fi/gbupwoqp9uhqf9w2j4ruk/Cotton-PNP-2-6.jpg?rlkey=gc0lb2rvuxelwsik0j6834hqp&dl=1">Cotton PNP</a>
+        <a href="#" data-image="https://dl.dropboxusercontent.com/scl/fi/p06e6n9mpo1zuibavboor/PET-2-Ply.jpg?rlkey=zw4b06bbu6t3vyzkiuzwv8vu4&dl=1">PET 2 Ply</a>
+        <a href="#" data-image="https://dl.dropboxusercontent.com/scl/fi/zgpcoyl3jf8d1c93381lm/Series-PET-BOUCLE.jpg?rlkey=3mk8w4i201vj070mkkzpr5aqu&dl=1">PET Boucle</a>
+        <a href="#" data-image="https://dl.dropboxusercontent.com/scl/fi/tiv0kp233qnbdl7v7sdef/Series-PL.jpg?rlkey=6suz2t3zh58b1tgiybethlock&dl=1">PET - PL</a>
+        <a href="#" data-image="https://dl.dropboxusercontent.com/scl/fi/bc27k1spzflh20n1ifi5m/PP-SL.jpg?rlkey=7tlbmyyoqr6qcw5tixxuxzobf&dl=1">PP - SL</a>
+        <a href="#" data-image="https://dl.dropboxusercontent.com/scl/fi/9xqu6arl26r43e6ubr4hj/PP-MM-TX.jpg?rlkey=iqq1s2xw6hmrdep8bnixdi51m&dl=1">PP - MM+TX</a>
+        <a href="#" data-image="https://dl.dropboxusercontent.com/scl/fi/bd6mpmm0tl4ovw15uc4ol/Series-BL.jpg?rlkey=qfb2jv1e24f2p7aqageqnzw4t&dl=1">PP - BL</a>
+        <a href="#" data-image="https://dl.dropboxusercontent.com/scl/fi/vg4rntjlz0ogv7th6l3h9/PVC.jpg?rlkey=dixfseb9w6x5y5h92j4uqcyxo&dl=1">PVC</a>
+        <a href="#" data-image="https://dl.dropboxusercontent.com/scl/fi/rzqscy9bsk1vcsbupht28/Series-HS-8-10-GM-MT.jpg?rlkey=hzpjxxg596gasm8rv1tmnvgbp&dl=1">HS -8-10 GM - MT</a>
+        <a href="#" data-image="https://dl.dropboxusercontent.com/scl/fi/llf9kdjqsdnnlg8x2hurg/Series-JDS-0C.jpg?rlkey=e45j517h0ullopktig5nua5lj&dl=1">JDS - 0C</a>
+        <a href="#" data-image="https://dl.dropboxusercontent.com/scl/fi/klemstpsocx5js60xyg48/Series-WOOL-JUTE-LEFA-T.jpg?rlkey=7xothe8gqzwx52uqd38ndiib9&dl=1">Wool Jute Lefa Twisted</a>
+        <a href="#" data-image="https://dl.dropboxusercontent.com/scl/fi/xdhyi7hnk9kexvrqpz64v/Series-WOOL-JUTE-LEFA.jpg?rlkey=plh7jjvvfvv2n0nu73m03j8yr&dl=1">Wool Jute Lefa</a>
+        <a href="#" data-image="https://dl.dropboxusercontent.com/scl/fi/sovg2f0pzzd9v3knx7ihx/Series-WPL-0C.jpg?rlkey=dqnk8lwgrhy1dq30f1s133lu4&dl=1">WPL 0C</a>
+        <a href="#" data-image="https://dl.dropboxusercontent.com/scl/fi/xbnjtmebqtcxk6bu52kf6/Series-Bamboo-30C.jpg?rlkey=onzn8pszkm75lafa45z9ct0rk&dl=1">Bamboo 30C</a>
+        <a href="#" data-image="https://dl.dropboxusercontent.com/scl/fi/g66uheaxtjgizyh5rj3li/Series-FLW-10C.jpg?rlkey=lfv2q9w2a8d79u7aa18cv9va3&dl=1">FLW 10C</a>
+        <a href="#" data-image="https://dl.dropboxusercontent.com/scl/fi/dhaos40arhsk1lo3efc3c/Series-HS-20C.jpg?rlkey=9lxdnmimrkoec3vr058j3431w&dl=1">HS 20C</a>
+        <a href="#" data-image="https://dl.dropboxusercontent.com/scl/fi/a21vnzvde2cud2ti0411a/Series-NG-10C.jpg?rlkey=lbskv817bqdiwpuj6dofxjar5&dl=1">NG 10C</a>
+        <a href="#" data-image="https://dl.dropboxusercontent.com/scl/fi/vzgfkbcqzr89dn59t6whe/Series-NW-60C-X-1-PLY.jpg?rlkey=9l5bl7e6on9vrbnap2vo7i08h&dl=1">NW 60C - 1 Ply</a>
+        <a href="#" data-image="https://dl.dropboxusercontent.com/scl/fi/hbx53gv8rmwvyem4kgts6/Series-TW-60C-X-2-PLY.jpg?rlkey=l03d2nmwjdtviidj1m2vsnq8q&dl=1">TW 60C - 2 Ply</a>
+        <a href="#" data-image="https://dl.dropboxusercontent.com/scl/fi/4p6lxto3dsm1fw7272an0/Series-TW-60C-X-6-PLY.jpg?rlkey=nlv2uwecsg8qrvhgiwjmqm99u&dl=1">TW 60C - 6 Ply</a>
+    </div>
 
-  <div class="image-links">
-    <a href="#" data-image="https://dl.dropboxusercontent.com/scl/fi/ydotubwb637au8qdqq5xq/AA6227J03_1D01.jpg?rlkey=lgor6ded7epqhrc8ynzjkdaz7&dl=1">Cotton PNP</a>
-    <a href="#" data-image="https://dl.dropboxusercontent.com/scl/fi/8q5z2q2j7rttbb72fkbbo/AA6227J03_1V01.jpg?rlkey=gzv4ntkraalvvibg07u2bypb8&dl=1">Shade Card 2</a>
-    <a href="#" data-image="https://dl.dropboxusercontent.com/scl/fi/hc6ewqmtmyx34rfp1zp7o/AA6982J12_1D01.jpg?rlkey=266njctw59x9vraw5d5723okl&dl=1">Shade Card 3</a>
-    <a href="#" data-image="https://dl.dropboxusercontent.com/scl/fi/0tg1ofm7k41obodvla5b7/AA6982J12_1D02.jpg?rlkey=jux8moa4y3k6bkwgoud1iez1t&dl=1">Shade Card 4</a>
-  </div>
+    <!-- Right side for image preview -->
+    <div class="image-container">
+        <img id="previewImage" src="" alt="Image Preview">
+    </div>
 
-  <div class="preview">
-    <div class="spinner"></div>
-    <img id="previewImage" alt="Image Preview">
-  </div>
+    <!-- Download button -->
+    <a href="#" class="download-link" id="downloadButton">Download</a>
 
-  <button id="downloadBtn" class="download-btn">Download Image</button>
-  <div id="loadingMessage" class="loading-message" aria-live="polite">Loading...</div>
+    <script>
+        const links = document.querySelectorAll(".index a");
+        const previewImage = document.getElementById("previewImage");
+        const downloadButton = document.getElementById("downloadButton");
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const links = document.querySelectorAll(".image-links a");
-      const previewImage = document.getElementById("previewImage");
-      const downloadBtn = document.getElementById("downloadBtn");
-      const loadingMessage = document.getElementById("loadingMessage");
-      const spinner = document.querySelector(".spinner");
-
-      links.forEach(link => {
-        link.addEventListener("click", function(event) {
-          event.preventDefault();
-          const imageUrl = this.getAttribute("data-image");
-
-          // Show spinner and loading message
-          spinner.style.display = "block";
-          loadingMessage.style.display = "block";
-          previewImage.style.display = "none";
-          downloadBtn.style.visibility = "hidden";
-
-          // Simulate image loading
-          setTimeout(() => {
-            previewImage.src = imageUrl;
-            previewImage.style.display = "block";
-            previewImage.alt = this.textContent;
-
-            spinner.style.display = "none";
-            loadingMessage.style.display = "none";
-            downloadBtn.style.visibility = "visible";
-
-            // Update download button functionality
-            downloadBtn.onclick = function() {
-              downloadImage(imageUrl);
-            };
-          }, 1000);
+        links.forEach(link => {
+            link.addEventListener("click", function (event) {
+                event.preventDefault();
+                const imageUrl = link.getAttribute("data-image");
+                previewImage.src = imageUrl;
+                previewImage.style.display = "block";
+                
+                // Enable download button when an image is selected
+                downloadButton.href = imageUrl;
+                downloadButton.download = imageUrl.split('/').pop();
+            });
         });
-      });
-
-      function downloadImage(imageUrl) {
-        loadingMessage.textContent = "Downloading...";
-        loadingMessage.style.display = "block";
-        downloadBtn.style.visibility = "hidden";
-
-        setTimeout(() => {
-          window.open(imageUrl, "_blank");
-          loadingMessage.style.display = "none";
-        }, 1000);
-      }
-    });
-  </script>
+    </script>
 
 </body>
 </html>
