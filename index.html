@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hafizia Shade Cards Index</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f9f9f9;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      color: #333;
+    }
+    .image-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .image-links a {
+      text-decoration: none;
+      color: #007bff;
+      font-size: 1.1rem;
+      transition: color 0.2s;
+    }
+    .image-links a:hover {
+      color: #0056b3;
+    }
+    .preview {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .preview img {
+      max-width: 300px;
+      height: auto;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      display: none; /* Initially hidden */
+    }
+    .download-btn {
+      visibility: hidden; /* Keeps button space reserved */
+      margin-top: 10px;
+      padding: 10px 15px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .download-btn:hover {
+      background-color: #0056b3;
+    }
+    .loading-message {
+      display: none;
+      margin-top: 10px;
+      color: #333;
+      font-style: italic;
+    }
+    .spinner {
+      display: none;
+      margin-top: 10px;
+      width: 30px;
+      height: 30px;
+      border: 4px solid rgba(0, 0, 0, 0.1);
+      border-top: 4px solid #007bff;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Hafizia Shade Cards Index</h1>
+
+  <div class="image-links">
+    <a href="#" data-image="https://dl.dropboxusercontent.com/scl/fi/ydotubwb637au8qdqq5xq/AA6227J03_1D01.jpg?rlkey=lgor6ded7epqhrc8ynzjkdaz7&dl=1">Cotton PNP</a>
+    <a href="#" data-image="https://dl.dropboxusercontent.com/scl/fi/8q5z2q2j7rttbb72fkbbo/AA6227J03_1V01.jpg?rlkey=gzv4ntkraalvvibg07u2bypb8&dl=1">Shade Card 2</a>
+    <a href="#" data-image="https://dl.dropboxusercontent.com/scl/fi/hc6ewqmtmyx34rfp1zp7o/AA6982J12_1D01.jpg?rlkey=266njctw59x9vraw5d5723okl&dl=1">Shade Card 3</a>
+    <a href="#" data-image="https://dl.dropboxusercontent.com/scl/fi/0tg1ofm7k41obodvla5b7/AA6982J12_1D02.jpg?rlkey=jux8moa4y3k6bkwgoud1iez1t&dl=1">Shade Card 4</a>
+  </div>
+
+  <div class="preview">
+    <div class="spinner"></div>
+    <img id="previewImage" alt="Image Preview">
+  </div>
+
+  <button id="downloadBtn" class="download-btn">Download Image</button>
+  <div id="loadingMessage" class="loading-message" aria-live="polite">Loading...</div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const links = document.querySelectorAll(".image-links a");
+      const previewImage = document.getElementById("previewImage");
+      const downloadBtn = document.getElementById("downloadBtn");
+      const loadingMessage = document.getElementById("loadingMessage");
+      const spinner = document.querySelector(".spinner");
+
+      links.forEach(link => {
+        link.addEventListener("click", function(event) {
+          event.preventDefault();
+          const imageUrl = this.getAttribute("data-image");
+
+          // Show spinner and loading message
+          spinner.style.display = "block";
+          loadingMessage.style.display = "block";
+          previewImage.style.display = "none";
+          downloadBtn.style.visibility = "hidden";
+
+          // Simulate image loading
+          setTimeout(() => {
+            previewImage.src = imageUrl;
+            previewImage.style.display = "block";
+            previewImage.alt = this.textContent;
+
+            spinner.style.display = "none";
+            loadingMessage.style.display = "none";
+            downloadBtn.style.visibility = "visible";
+
+            // Update download button functionality
+            downloadBtn.onclick = function() {
+              downloadImage(imageUrl);
+            };
+          }, 1000);
+        });
+      });
+
+      function downloadImage(imageUrl) {
+        loadingMessage.textContent = "Downloading...";
+        loadingMessage.style.display = "block";
+        downloadBtn.style.visibility = "hidden";
+
+        setTimeout(() => {
+          window.open(imageUrl, "_blank");
+          loadingMessage.style.display = "none";
+        }, 1000);
+      }
+    });
+  </script>
+
+</body>
+</html>
